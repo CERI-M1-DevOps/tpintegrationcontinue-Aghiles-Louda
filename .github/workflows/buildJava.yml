@@ -15,4 +15,4 @@ jobs:
         distribution: 'corretto' # See 'Supported distributions' for available options
         java-version: '21'
         cache: 'maven'
-    - run: mvn -B package
+    - run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=$(echo ${{ github.repository }} | sed 's-/-_-')
