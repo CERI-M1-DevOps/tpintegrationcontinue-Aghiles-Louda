@@ -289,6 +289,38 @@ public class ListeSimpleTest {
     }
 
     @Test
+    void echangerMemeNoeud() {
+        listeATester.ajout(5);
+        listeATester.ajout(4);
+        Noeud r1 = listeATester.tete;
+        listeATester.echanger(r1, r1); // Echange du même nœud
+        assertEquals("ListeSimple(Noeud(4), Noeud(5))", listeATester.toString());
+    }
+
+    @Test
+    void echangerNoeudsAdjacents() {
+        listeATester.ajout(5);
+        listeATester.ajout(4);
+        listeATester.ajout(3);
+        Noeud r1 = listeATester.tete.getSuivant(); // Noeud(4)
+        Noeud r2 = r1.getSuivant(); // Noeud(5)
+        listeATester.echanger(r1, r2); // Echange de nœuds adjacents
+        assertEquals("ListeSimple(Noeud(3), Noeud(5), Noeud(4))", listeATester.toString());
+    }
+
+    @Test
+    void echangerDernierNoeudAvecUnAutre() {
+        listeATester.ajout(5);
+        listeATester.ajout(4);
+        listeATester.ajout(3);
+        Noeud r1 = listeATester.tete;
+        Noeud r2 = r1.getSuivant().getSuivant(); // Dernier nœud (5)
+        listeATester.echanger(r1, r2); // Echange du premier et du dernier nœud
+        assertEquals("ListeSimple(Noeud(5), Noeud(4), Noeud(3))", listeATester.toString());
+}
+
+
+    @Test
     void echangerLePremierNoeudAvecUnAutre() {
         listeATester.ajout(5);
         listeATester.ajout(4);
