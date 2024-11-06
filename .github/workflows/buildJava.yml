@@ -15,4 +15,4 @@ jobs:
         distribution: 'corretto' # See 'Supported distributions' for available options
         java-version: '21'
         cache: 'maven'
-    - run: mvn –B package
+    - run: mvn -B package
