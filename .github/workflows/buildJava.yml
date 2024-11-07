@@ -23,6 +23,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-
 
+
     - name: SonarQube Action
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
