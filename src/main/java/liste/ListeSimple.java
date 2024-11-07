@@ -13,6 +13,14 @@ public class ListeSimple {
         size++;
     }
 
+    /*
+    * Cette fontion permet de modifier la première occurance 
+    * d'un element d'une liste avec une nouvelle valeur 
+    * @param element c'est l'element de la liste à modifier
+    * @param nouvelleValeur c'est la valeur avec laquelle on va modifier l'element
+    * @return une List avec les modification nécessaire 
+    */
+
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null && courant.getElement() != element)
@@ -20,6 +28,7 @@ public class ListeSimple {
         if (courant != null)
             courant.setElement(nouvelleValeur);
     }
+
 
     public void modifieTous(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
@@ -43,6 +52,13 @@ public class ListeSimple {
         return sb.toString();
     }
 
+
+    /*
+    * Cette fontion permet de supprimer la première occurance 
+    * d'un element dans la list
+    * @param element c'est l'element de la liste à supprimer
+    * @return une List avec les modification nécessaire
+    */
     public void supprimePremier(Object element) {
         if (tete != null) {
             if (tete.getElement() == element) {
@@ -94,6 +110,7 @@ public class ListeSimple {
         }
     }
 
+
     public void inverser() {
         Noeud precedent = null;
         Noeud courant = tete;
@@ -106,6 +123,12 @@ public class ListeSimple {
         tete = precedent;
     }
 
+     /*
+    * Cette fontion nous retourne le noeud précédent du noeud donné en paramètre 
+    * @param r c'est le noeud dont on veut avoir le noeud précédent
+    * @return le noeud précédent du noeud donné en praramètre
+    */
+
     public Noeud getPrecedent(Noeud r) {
     // la liste n'est pas vide puisqu'on transmet un Node de la liste et le Node existe obligatoirement
         Noeud precedent = tete;
@@ -116,6 +139,15 @@ public class ListeSimple {
         }
         return precedent;
     }
+
+
+    /*
+    * Cette fontion permet d'échanger les positions de deux noeud
+    * d'un element d'une liste avec une nouvelle valeur 
+    * @param r1 c'est le premier noeud à échanger
+    * @param r2 c'est le deuxième noeud à échanger
+    * @return une List avec les modification nécessaire 
+    */
 
     public void echanger(Noeud r1, Noeud r2) {
         if (r1 == r2)
