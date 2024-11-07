@@ -1,10 +1,7 @@
 name: "Java Doc"
 
 
-on:
-    pull_request:
-      types:
-        - closed
+on: [push]
 
 permissions:
   contents: write
@@ -34,4 +31,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./target/site/apidocs
+            publish_dir: ./target/reports/apidocs/
